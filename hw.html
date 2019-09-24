@@ -1,9 +1,65 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		
-	</head>
-<body>
+  <head>
+    <title>Homework 2b</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  </head>
+  <body>
+	<div class="container">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<h2>Please enter your data.</h2>
+			<form id="myForm" role="form">
+				<div class="form-group">
+					<label for="InputName">Your Name</label>
+					<input type="text" class="form-control" id="InputName" placeholder="Name">
+				</div>
+				<div class="form-group">
+					<label for="InputEmail">Email Address</label>
+					<input type="email" class="form-control" id="InputEmail" placeholder="Email">
+				</div>
+				<div class="form-group">
+					<label for="InputBook">Favorite Book</label>
+					<input type="text" class="form-control" id="InputBook" placeholder="Favorite Book">
+				</div>
+				<button id="save" class="btn btn-default">Save</button>
+			</form>
+			<hr>
+		</div>
+		<div class="clearfix"></div>
+		<div id="output" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<h2>Dataset</h2>
+
+		</div>
+	</div>
 	
-</body>
+	<script type="text/javascript">
+var save = document.getElementById("save");
+var output = document.getElementById("output");
+
+save.onclick = function(){
+	var name 	= document.getElementById("inputName").value;
+	var email 	= document.getElementById("InputEmail").value;
+	var book 	= document.getElementById("inputBook").value;
+	
+	var form1 = new Form(name, email, book);
+
+	output.innerHTML += "form1";
+
+};
+
+
+function Form(name, email, book){
+	this.name 	= name;
+	this.email 	= email;
+	this.book 	= book;
+	console.log(name);
+	console.log(email);
+	console.log(book);
+};
+Form.prototype.name 	= '';
+Form.prototype.email 	= '';
+Form.prototype.book 	= '';
+	</script>
+  
+  </body>
 </html>
